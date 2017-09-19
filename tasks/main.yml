@@ -5,7 +5,6 @@
 
 - name: install nginx 
   yum: name=nginx state=present update_cache=yes
-  notify: restart nginx
 
 - name: Deploy nginx config file 
   template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf mode=0644
@@ -15,5 +14,10 @@
   template: src=index.html.j2 dest=/usr/share/nginx/html/index.html mode=0644
   notify: restart nginx
 
+- name: ensure the nginx service is up and enabled 
+  service: name=nginx, state=started, enabled=yes 
 
- 
+- name: verify nginx is listening on port 8000 
+  wait_for: port=8000 timeout=1 
+
+
