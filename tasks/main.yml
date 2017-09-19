@@ -1,2 +1,8 @@
 ---
 # tasks file for nginx
+- name: install epel-release repository
+  yum: name=epel-release state=present update_cache=yes 
+
+- name: install nginx 
+  yum: name=nginx state=present update_cache=yes
+ 
