@@ -7,6 +7,8 @@ Role nginx also deploys required configuration and webpage to the nginx server.
 Requirements
 ------------
 A working server (Centos 7.X / Redhat 7.X). 
+Have host entries of web server in controller host.
+Have key based authentication or password for the webserver for SSH. 
 
 Playbook test environemt:
 ----------------

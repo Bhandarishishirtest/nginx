@@ -1,3 +1,2 @@
-localhost
-nginx.server
+nginx.server ansible_user=vagrant
 
