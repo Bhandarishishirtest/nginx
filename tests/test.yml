@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: nginx.server
   become: True
   become_method: sudo
   remote_user: root
